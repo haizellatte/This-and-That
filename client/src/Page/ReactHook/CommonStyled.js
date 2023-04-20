@@ -90,13 +90,15 @@ color: #e4dcc9;
 
 export const MenuButton = styled.button`
     width : 15rem;
-    height : 5rem;
-    font-size: 2rem;
+    height : 5.3rem;
+    font-size: 1.8rem;
 	background-color:  #24221b;
     cursor: pointer;
     color: #e4dcc9;
 	border-radius: 50px;
     margin-bottom: 1rem;
+    overflow-wrap : break-word;
+    padding : 5px 10px;
 
     :hover {
 	background-color: #e4dcc9;
