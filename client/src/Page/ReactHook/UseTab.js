@@ -1,5 +1,8 @@
 import { useState } from 'react';
 import styled from "styled-components";
+import * as M from "./CommonStyled";
+import { Modal } from "./CodeModal.js/Modal"
+import HooksCode from "./CodeModal.js/CodeBlocks";
 
 const playList = [
     {
@@ -30,6 +33,11 @@ const UseTab = () => {
     const {currentItem, changeItem} = useTabs(0, playList) // 각각 allTabs[currentIndex]와 setCurrentIndex를 구조분해 할당으로 가져온다.
 
     return (
+        <>
+               <M.ModalContainer>
+                    <Modal
+                        hookName={HooksCode.useTab} />
+                    </M.ModalContainer>
         <Container>
             <div>
                 <Lyrics>{currentItem.lyrics}</Lyrics>
@@ -39,7 +47,9 @@ const UseTab = () => {
                 <button key={index} onClick={() => changeItem(index)}>{song.singer}</button>
             ))} 
             </div>    
-        </Container>
+            </Container>
+            
+        </>    
     );
 };
 

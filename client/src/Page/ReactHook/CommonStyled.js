@@ -24,7 +24,7 @@ export const HeadContainer = styled.div`
 display: flex;
 justify-content: center;
 align-items: center;
-background-color:  #24221b;
+background-color: #24221b;
 border-radius: 20px;
 width: 100%;
 height: 10%; 
@@ -63,24 +63,6 @@ border: 3px solid #24221b;
 border-radius: 20px;
 `;
 
-export const MainContentContainer = styled.div`
-display: flex;
-align-items: center;
-justify-content: center;
-flex-direction: column;
-justify-content: space-evenly;
-height: 70%;
-width: 100%;
-
-> div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    justify-content: space-evenly;
-    height: 30%;
-}   
-`;
 
 export const HeadText = styled.div`
 font-weight: 600;
@@ -112,17 +94,11 @@ export const MenuButton = styled.button`
 }
 `;
 
-export const Input = styled.input.attrs({
-    classname: "input"
-})`
-    padding : 1rem 1rem;
-    width : 30rem;
-    height : 4rem;
-    font-size : 1.5rem;
-    letter-spacing : 7px;
+export const ModalContainer = styled.div`
+display: flex;
+justify-content: flex-end;
+width: 100%;
+padding: 1rem 4.5rem;
+position: relative;
+top : 0;
 `;
-
-export const SubText = styled.div`
-font-weight: 500;
-font-size: 3rem;
-`
