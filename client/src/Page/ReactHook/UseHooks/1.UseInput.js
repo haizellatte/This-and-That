@@ -61,14 +61,12 @@ const UseInput = () => {
 export default UseInput;
 
 const Container = styled.div`
-${({theme}) => theme.flex.flexBox('column')};
-justify-content: space-evenly;
+${({theme}) => theme.flex.flexBox('column','', 'space-evenly')};
 padding : 5rem 2rem;
 width: 100%;
 
 > div {
-    ${({theme}) => theme.flex.flexBox('column')};
-    justify-content: space-evenly;
+    ${({theme}) => theme.flex.flexBox('column','', 'space-evenly')};
     padding : 10rem 0;
 }   
 `;
