@@ -1,7 +1,7 @@
-#🔮 This-and-That
+# 🔮 This-and-That
 이것저것 공부하는 레포지토리입니다.
 
-<hr />
+<br />
 
 ## ⚙️ 프로젝트 초기세팅(Install)
 - `npx create-react-app {폴더명}`
@@ -10,7 +10,7 @@
 - `npm i react-router-dom`
 - `npm i react-icons`
 
-<hr />
+<br />
 
 ## 🎨 styled-components 초기 세팅
 ### src/Styles/GlobalStyles.js
@@ -67,7 +67,7 @@ a{
 export default GlobalStyles;
 ```
 
-<hr />
+<br />
 
 ### src/Styles/theme.js
 ```jsx
@@ -139,7 +139,7 @@ const theme = {
 export default theme;
 ```
 
-<hr />
+<br />
 
 ### index.js
 ```jsx
@@ -159,19 +159,23 @@ root.render(
 );
 ```
 
-<hr />
+<br />
 
 ## 🎨 theme 사용방법
-- flexbox/border/fontWeight
+#### flexbox/border/fontWeight
 ```jsx
 ${({theme}) => theme.flex.flexBox('column','', 'space-evenly')};
 ${({ theme }) => theme.border.basic};
 ${({ theme }) => theme.fontWeight.semiBold};
 ```
-- fontSize/length/color
+#### fontSize/length/color
 ```jsx
 font-size : ${({theme}) => theme.fontSize.title};
 margin-bottom : ${({theme}) => theme.length.sm};
 color : ${({theme}) => theme.color.backgrLightColor};
+```
+#### 기타
+```jsx
+  width: ${(props) => props.width || "100px"};
 ```
 
