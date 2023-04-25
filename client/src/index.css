@@ -2,32 +2,3 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;300;400;500;600;700&display=swap');
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'IBM Plex Mono', monospace;
-}
-ol,
-ul,
-li {
-  list-style: none;
-}
-a {
-  text-decoration: none;
-  color: inherit;
-}
-a:active {
-  background: none;
-}
-body {
-  background-color: #fcfbf4;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-/* html,
-body {
-  font-size: 62.5%;
-  line-height: 1.285;
-} */

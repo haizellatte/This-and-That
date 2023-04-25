@@ -53,16 +53,16 @@ const ReactHooks = () => {
             <R.Wrapper>
                 <R.Container>
                     <R.HeadContainer>
-                        <R.HeadText>Nomad 실전 React Hooks 연습 공간</R.HeadText>   
+                        <div>Nomad 실전 React Hooks 연습 공간</div>   
                     </R.HeadContainer>
                     <R.ContentContainer>
-                        <R.MenuContainer>
+                        <div className='menuContainer'>
                             {SelectHook.map((hook, index) => {
                                 const hookName = Object.keys(hook).toString();
                                 return <R.MenuButton key={index} onClick={handleClickButton} name={hookName}>{HookName.indexOf(hookName)+1}. {hookName}</R.MenuButton>
                             })} 
-                        </R.MenuContainer>
-                        {content && <R.MainContainer>{SelectHook[HookName.indexOf(content)][content]}</R.MainContainer>}
+                        </div>
+                        {content && <div className='mainContainer'>{SelectHook[HookName.indexOf(content)][content]}</div>}
                     </R.ContentContainer>
                 </R.Container>
             </R.Wrapper> 

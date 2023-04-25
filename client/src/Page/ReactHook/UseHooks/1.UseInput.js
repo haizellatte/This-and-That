@@ -43,12 +43,12 @@ const UseInput = () => {
                     </M.ModalContainer>
             <Container>
                 <div>
-                    <SubText>💭 진료 예약 시간을 입력해주세요.</SubText>
+                    <Title>💭 진료 예약 시간을 입력해주세요.</Title>
                     <Input {...time} ref={focusInput } />
                     <span>예시 : AM. 12:30</span>
                 </div>
                 <div>
-                    <SubText>💭 예약확인 할 비밀번호를 입력해주세요.</SubText>
+                    <Title>💭 예약확인 할 비밀번호를 입력해주세요.</Title>
                     <Input {...pwd} placeholder="* * * * * *" />
                     <span>비밀번호는 6자리 이하로 입력해주세요.</span>
                 </div>
@@ -61,36 +61,28 @@ const UseInput = () => {
 export default UseInput;
 
 const Container = styled.div`
-/* background-color: red; */
-display: flex;
-align-items: center;
-justify-content: center;
-flex-direction: column;
+${({theme}) => theme.flex.flexBox('column')};
 justify-content: space-evenly;
 padding : 5rem 2rem;
 width: 100%;
 
 > div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    ${({theme}) => theme.flex.flexBox('column')};
     justify-content: space-evenly;
     padding : 10rem 0;
 }   
 `;
 
-const SubText = styled.div`
-font-size: 2.7rem;
-padding-bottom: 1rem;
+const Title = styled.div`
+font-size : ${({theme}) => theme.fontSize.title};
+padding-bottom: ${({theme}) => theme.length.sm};
 `
 const Input = styled.input.attrs({
     classname: "input"
 })`
+    font-size : ${({ theme }) => theme.fontSize.subTitle};
+    margin-bottom : ${({theme}) => theme.length.sm};
     padding : 1rem 1rem;
     width : 30rem;
     height : 4rem;
-    font-size : 1.5rem;
-    letter-spacing : 7px;
-    margin-bottom : 1rem;
 `;

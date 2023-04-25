@@ -1,74 +1,57 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 export const Wrapper = styled.div`
-display: flex;
-justify-content: center;
-align-items: center;
+${({theme}) => theme.flex.flexBox()};
 height: 100%; 
 width: 100%;
 position: absolute;
 top: 0;
 left: 0;
-background-color : #e4dcc9;
+background-color : ${({theme}) => theme.color.backgrLightColor};
 `;
 
 export const Container = styled.div`
-display: flex;
+${({theme}) => theme.flex.flexBox('column')};
 height: 90%; 
 width: 90%;
-align-items: center;
-flex-direction: column;
 `;
 
 export const HeadContainer = styled.div`
-display: flex;
-justify-content: center;
-align-items: center;
-background-color: #24221b;
+${({ theme }) => theme.flex.flexBox()};
+background-color : ${({theme}) => theme.color.backgrDarkColor};
 border-radius: 20px;
 width: 100%;
 height: 10%; 
-margin-bottom: 1rem;
+margin-bottom:  ${({ theme }) => theme.length.sm};
+    > div {
+        ${({ theme }) => theme.fontWeight.semiBold};
+        font-size: 4rem;
+        color : ${({theme}) => theme.color.backgrLightColor};
+    }
 `;
 
 export const ContentContainer = styled.div`
-display: flex;
-justify-content: center;
-align-items: center;
+${({ theme }) => theme.flex.flexBox()};
+height: 100%;
 width: 100%;
-height: 100%; 
-flex-direction: row;
+padding: ${({theme}) => theme.length.sm};
+
+    .menuContainer {
+        ${({theme}) => theme.flex.flexBox('column')};
+        ${({ theme }) => theme.border.basic};
+        padding: ${({ theme }) => theme.length.sm};
+        margin-right : ${({ theme }) => theme.length.sm};
+        border-radius: 20px;
+        height: 100%;
+    }
+    .mainContainer {
+        ${({ theme }) => theme.flex.flexBox('column')};
+        ${({ theme }) => theme.border.basic};
+        border-radius: 20px;
+        width: 100%;
+        height: 100%;
+    }
 `;
-
-export const MenuContainer = styled.div`
-display: flex;
-align-items: center;
-justify-content: center;
-border: 3px solid #24221b;
-border-radius: 20px;
-margin-right : 1rem;
-flex-direction: column;
-height: 100%;
-width: 26%;
-`;
-
-export const MainContainer = styled.div`
-display: flex;
-align-items: center;
-justify-content: center;
-flex-direction: column;
-height: 100%;
-width: 74%;
-border: 3px solid #24221b;
-border-radius: 20px;
-`;
-
-
-export const HeadText = styled.div`
-font-weight: 600;
-font-size: 4rem;
-color: #e4dcc9;
-`
 
 export const MenuButton = styled.button`
     width : 21rem;
@@ -86,7 +69,6 @@ export const MenuButton = styled.button`
 	background-color: #e4dcc9;
 	color: #24221b;
 }
-
     @media (max-width: 320px) {
         width : 3rem;
         height : 5rem;
@@ -95,19 +77,13 @@ export const MenuButton = styled.button`
 `;
 
 export const ModalContainer = styled.div`
-display: flex;
-justify-content: flex-end;
+${({theme}) => theme.flex.flexBox('', '','flex-end')};
 width: 100%;
 padding: 1rem 3rem;
-position: relative;
-top : 0;
 `;
 
 export const HookContainer = styled.div`
-display: flex;
-align-items: center;
-justify-content: center;
-flex-direction: column;
+${({theme}) => theme.flex.flexBox('column')};
 padding : 5rem 2rem;
 height: 90%;
 width: 100%;
