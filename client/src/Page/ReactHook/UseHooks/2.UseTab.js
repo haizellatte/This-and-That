@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import styled from "styled-components";
-import * as M from "./CommonStyled";
-import { Modal } from "./CodeModal.js/Modal"
-import HooksCode from "./CodeModal.js/CodeBlocks";
+import * as M from "../CommonStyled";
+import { Modal } from "../CodeModal/Modal"
+import HooksCode from "../CodeModal/CodeBlocks";
 
 const playList = [
     {
@@ -34,10 +34,10 @@ const UseTab = () => {
 
     return (
         <>
-               <M.ModalContainer>
-                    <Modal
-                        hookName={HooksCode.useTab} />
-                    </M.ModalContainer>
+            <M.ModalContainer>
+               <Modal
+                hookName={HooksCode.useTab} />
+            </M.ModalContainer>
         <Container>
             <div>
                 <Lyrics>{currentItem.lyrics}</Lyrics>
@@ -62,7 +62,6 @@ justify-content: center;
 flex-direction: column;
 justify-content: space-evenly;
 height: 70%;
-width: 100%;
 
 > div {
     display: flex;
@@ -73,7 +72,7 @@ width: 100%;
 } 
 
 button {
-    width : 28rem;
+    width : 27rem;
     height : 5rem;
     font-size: 1.5rem;
 	background-color:  #24221b;
@@ -96,7 +95,7 @@ const Lyrics = styled.div`
 	justify-content: center;
 	align-items: center;
 	height: 500px;
-	width: 1000px;
+	width: 950px;
 	border: 3px solid #24221b;
 	border-radius: 5px;
 	position: relative;

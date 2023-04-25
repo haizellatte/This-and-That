@@ -1,8 +1,8 @@
 import { useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
-import * as M from "./CommonStyled";
-import { Modal } from "./CodeModal.js/Modal"
-import HooksCode from "./CodeModal.js/CodeBlocks";
+import * as M from "../CommonStyled";
+import { Modal } from "../CodeModal/Modal"
+import HooksCode from "../CodeModal/CodeBlocks";
 
 //Todo | useInput Hook : Input의 기본값 설정
 const useInput = (initialValue, validator) => { //여기서 validator는 함수이다.

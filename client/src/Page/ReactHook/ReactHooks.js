@@ -1,11 +1,18 @@
 import {useState} from 'react';
 import * as R from "./CommonStyled";
-import UseInput from './UseInput';
-import UseTab from "./UseTab";
-import UseTitle from "./UseTitle";
-import USeClick from "./UseClick";
-import UseConfirm from "./UseConfirm";
-import UsePreventLeave from "./UsePreventLeave";
+import UseInput from './UseHooks/1.UseInput';
+import UseTab from "./UseHooks/2.UseTab";
+import UseTitle from "./UseHooks/3.UseTitle";
+import USeClick from "./UseHooks/4.UseClick";
+import UseConfirm from "./UseHooks/5.UseConfirm";
+import UsePreventLeave from "./UseHooks/6.UsePreventLeave";
+import UseBeforeLeave from './UseHooks/7.UseBeforeLeave';
+import UseFadeIn from "./UseHooks/8.UseFadeIn";
+import UseFullscrean from './UseHooks/9.UseFullscreen';
+import UseNetwork from './UseHooks/10.UseNetwork';
+import UseNotification from './UseHooks/11.UseNotification';
+import UseScroll from './UseHooks/12.UseScroll';
+import UseAxios from "./UseHooks/13.UseAxios";
 
 const ReactHooks = () => {
     const [content, setContent] = useState("useInput");
@@ -16,7 +23,14 @@ const ReactHooks = () => {
         {useTitle: <UseTitle />},
         {useClick: <USeClick />},
         {useConfirm: <UseConfirm />},
-        {usePreventLeave : <UsePreventLeave />},
+        { usePreventLeave: <UsePreventLeave /> },
+        { useBeforeLeave : <UseBeforeLeave /> },
+        { useFadeIn: <UseFadeIn /> },
+        { useFullScreen : <UseFullscrean /> },
+        { useNetwork : <UseNetwork /> },
+        { useNotification : <UseNotification /> },
+        { useScroll : <UseScroll /> },
+        { useAxios : <UseAxios />}
     ]
 
     const HookName = []
@@ -45,7 +59,7 @@ const ReactHooks = () => {
                         <R.MenuContainer>
                             {SelectHook.map((hook, index) => {
                                 const hookName = Object.keys(hook).toString();
-                                return <R.MenuButton key={index} onClick={handleClickButton} name={hookName}>{hookName}</R.MenuButton>
+                                return <R.MenuButton key={index} onClick={handleClickButton} name={hookName}>{HookName.indexOf(hookName)+1}. {hookName}</R.MenuButton>
                             })} 
                         </R.MenuContainer>
                         {content && <R.MainContainer>{SelectHook[HookName.indexOf(content)][content]}</R.MainContainer>}

@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import styled from "styled-components";
-import * as M from "./CommonStyled";
-import { Modal } from "./CodeModal.js/Modal"
-import HooksCode from "./CodeModal.js/CodeBlocks";
+import * as M from "../CommonStyled";
+import { Modal } from "../CodeModal/Modal"
+import HooksCode from "../CodeModal/CodeBlocks";
 
 const useTitle = initialTitle => {
     const [title, setTitle] = useState(initialTitle);

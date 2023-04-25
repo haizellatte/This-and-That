@@ -80,9 +80,9 @@ export const Modal = ({ hookName }) => {
         </ModalBtn>
         {/* 조건부 렌더링을 활용해서 Modal이 열린 상태(isOpen이 true인 상태)일 때만 모달창과 배경이 뜰 수 있게 구현 */}
         {isOpen ? 
-        <ModalBackdrop onClick={openModalHandler}>
-          //event 버블링을 막는 메소드 
-            <ModalView onClick={(e) => e.stopPropagation()}>
+          <ModalBackdrop onClick={openModalHandler}>
+            {/*e.stopPropagation : event 버블링을 막는 메소드 */}
+            <ModalView onClick={(e) => e.stopPropagation()}>  
               <ExitBtn onClick={openModalHandler}>x</ExitBtn>
             <CopyBlock
               language={"jsx"}
@@ -98,3 +98,5 @@ export const Modal = ({ hookName }) => {
     </>
   );
 };
+
+              

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const Wrapper = styled.div`
 display: flex;
@@ -49,7 +49,7 @@ border-radius: 20px;
 margin-right : 1rem;
 flex-direction: column;
 height: 100%;
-width: 20%;
+width: 26%;
 `;
 
 export const MainContainer = styled.div`
@@ -58,7 +58,7 @@ align-items: center;
 justify-content: center;
 flex-direction: column;
 height: 100%;
-width: 80%;
+width: 74%;
 border: 3px solid #24221b;
 border-radius: 20px;
 `;
@@ -71,9 +71,9 @@ color: #e4dcc9;
 `
 
 export const MenuButton = styled.button`
-    width : 15rem;
+    width : 21rem;
     height : 5.3rem;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
 	background-color:  #24221b;
     cursor: pointer;
     color: #e4dcc9;
@@ -98,7 +98,7 @@ export const ModalContainer = styled.div`
 display: flex;
 justify-content: flex-end;
 width: 100%;
-padding: 1rem 4.5rem;
+padding: 1rem 3rem;
 position: relative;
 top : 0;
 `;
@@ -112,3 +112,9 @@ padding : 5rem 2rem;
 height: 90%;
 width: 100%;
 `;
+
+export const Text = styled.div`
+font-size: ${(props) => props.fontSize || "2.6rem"};
+cursor: pointer;
+margin-bottom: 2rem;
+`; 
