@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
-import * as M from "./CommonStyled";
 import styled from 'styled-components';
+import * as M from "./CommonStyled";
 import { Modal } from "./CodeModal.js/Modal"
 import HooksCode from "./CodeModal.js/CodeBlocks";
 

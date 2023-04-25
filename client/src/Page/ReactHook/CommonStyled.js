@@ -102,3 +102,13 @@ padding: 1rem 4.5rem;
 position: relative;
 top : 0;
 `;
+
+export const HookContainer = styled.div`
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+padding : 5rem 2rem;
+height: 90%;
+width: 100%;
+`;

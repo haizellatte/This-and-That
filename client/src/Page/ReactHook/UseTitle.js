@@ -1,5 +1,8 @@
 import { useEffect, useState } from 'react';
 import styled from "styled-components";
+import * as M from "./CommonStyled";
+import { Modal } from "./CodeModal.js/Modal"
+import HooksCode from "./CodeModal.js/CodeBlocks";
 
 const useTitle = initialTitle => {
     const [title, setTitle] = useState(initialTitle);
@@ -18,9 +21,16 @@ const UseTitle = () => {
     setTimeout(() => titleUpdater("Kirby is Here!"), 1000); 
 
     return (
-        <div>
+        <>
+            <M.ModalContainer>
+                    <Modal
+                        hookName={HooksCode.useTitle} />
+            </M.ModalContainer>
+            <M.HookContainer>
+
             <Text>Tab Title을 확인해보세요 !</Text>
-        </div>
+            </M.HookContainer>
+        </>
     );
 };
 

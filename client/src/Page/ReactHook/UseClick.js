@@ -1,5 +1,8 @@
 import { useEffect, useRef } from 'react';
 import styled from "styled-components";
+import * as M from "./CommonStyled";
+import { Modal } from "./CodeModal.js/Modal"
+import HooksCode from "./CodeModal.js/CodeBlocks";
 
 const useClick = onClick => {
 
@@ -27,9 +30,15 @@ const UseClick = () => {
     const title = useClick(todaySong);
 
     return (
-        <div>
+        <>
+        <M.ModalContainer>
+            <Modal
+                hookName={HooksCode.useClick} />
+            </M.ModalContainer>
+            <M.HookContainer>
             <Text ref={title}>💿 Today song is?</Text>
-        </div>
+            </M.HookContainer>
+        </>
     );
 };
 
@@ -39,4 +48,4 @@ const Text = styled.div`
 font-size: 2.6rem;
 cursor: pointer;
 text-decoration-line: underline;
-`;
+`; 
