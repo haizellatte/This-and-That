@@ -10,22 +10,6 @@ import UsePreventLeave from "./UsePreventLeave";
 const ReactHooks = () => {
     const [content, setContent] = useState("useInput");
 
-    const selectHook = {
-        useInput : <UseInput />,
-        useTab: <UseTab />,
-        useTitle: <UseTitle />,
-        useClick: <USeClick />,
-        useConfirm: <UseConfirm />,
-        usePreventLeave : <UsePreventLeave />
-    }
-
-    // console.log((Object.keys(selectHook))[0]) //useInput
-
-    /**
-     * 객체 키값 가져오기 : Object.keys[객체]
-     * 객체 배열 값 가져오기 : Object.values[객체]
-     */
-
     const SelectHook = [
         {useInput : <UseInput />},
         {useTab: <UseTab />},
@@ -37,12 +21,13 @@ const ReactHooks = () => {
 
     const HookName = []
     for (let el of SelectHook) {
-        // HookName.push(Object.keys(el));   
         HookName.push(Object.keys(el).toString())
     }
-    console.log(HookName)
-    // console.log((Object.keys(HookName)))
-    // console.log(Object.values(SelectHook.useInput)) //useInput
+
+    /**
+     * 객체 키값 가져오기 : Object.keys[객체]
+     * 객체 배열 값 가져오기 : Object.values[객체]
+     */
 
     const handleClickButton = e => {
         const { name } = e.target;
@@ -58,15 +43,12 @@ const ReactHooks = () => {
                     </R.HeadContainer>
                     <R.ContentContainer>
                         <R.MenuContainer>
-                            {/* {selectHook.map((hook, index) => {
-                                return <R.MenuButton key={index} onClick={handleClickButton} name={hook}>{hook}</R.MenuButton>
-                            })} */}
                             {SelectHook.map((hook, index) => {
                                 const hookName = Object.keys(hook).toString();
                                 return <R.MenuButton key={index} onClick={handleClickButton} name={hookName}>{hookName}</R.MenuButton>
                             })} 
                         </R.MenuContainer>
-                        {content && <R.MainContainer>{selectHook[content]}</R.MainContainer>}
+                        {content && <R.MainContainer>{SelectHook[HookName.indexOf(content)][content]}</R.MainContainer>}
                     </R.ContentContainer>
                 </R.Container>
             </R.Wrapper> 

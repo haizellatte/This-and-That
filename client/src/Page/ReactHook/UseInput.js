@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import * as I from "./CommonStyled";
 
 //Todo | useInput Hook : Input의 기본값 설정
@@ -20,17 +20,24 @@ const useInput = (initialValue, validator) => { //여기서 validator는 함수�
 
 const UseInput = () => {
     //2. validator 함수를 만든다.
-    const maxLen = value => value.length < 6;
+    const maxLen = ((value) => value.length < 6);
     //1. Input의 기본값을 설정할 수 있다. -> 필수 입력 값으로, 사용자의 편의를 도울 수 있는 값들
     const time = useInput("AM. ");
     const pwd = useInput("", maxLen)
     
+    const focusInput = useRef();
+
+    useEffect(() => {
+        focusInput.current.focus();
+    },[])
+
+
     return (
         <>
             <I.MainContentContainer>
                 <div>
                     <I.SubText>💭 진료 예약 시간을 입력해주세요.</I.SubText>
-                    <I.Input {...time} />
+                    <I.Input {...time} ref={focusInput } />
                     <span>예시 : AM. 12:30</span>
                 </div>
                 <div>
