@@ -7,8 +7,6 @@ assignees: haizellatte
 
 ---
 
-## Todo
-
 ## Description
 
 ## Progress
